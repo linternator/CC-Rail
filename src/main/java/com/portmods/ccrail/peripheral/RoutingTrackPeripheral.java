@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
-public class RoutingTrackPeripheral implements IPeripheral, IDynamicPeripheral {
+public class RoutingTrackPeripheral extends RoutingBookPeripheral {
 
     private final RoutingTrackBlockEntity blockEntity;
 

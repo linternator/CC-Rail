@@ -1,5 +1,6 @@
 package com.portmods.ccrail.peripheral;
 
+import com.mojang.logging.LogUtils;
 import dan200.computercraft.api.lua.IArguments;
 import dan200.computercraft.api.lua.ILuaContext;
 import dan200.computercraft.api.lua.LuaException;
@@ -7,25 +8,24 @@ import dan200.computercraft.api.lua.MethodResult;
 import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IDynamicPeripheral;
 import dan200.computercraft.api.peripheral.IPeripheral;
+import dan200.computercraft.core.apis.TableHelper;
 import mods.railcraft.world.level.block.entity.SwitchTrackRouterBlockEntity;
+import mods.railcraft.world.level.block.entity.detector.DetectorBlockEntity;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
 
-public class SwitchTrackRouterPeripheral implements IPeripheral, IDynamicPeripheral {
+import java.util.*;
 
-    private final SwitchTrackRouterBlockEntity blockEntity;
+public class SwitchTrackRouterPeripheral extends RoutingBookPeripheral {
+
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     public SwitchTrackRouterPeripheral(SwitchTrackRouterBlockEntity blockEntity) {
+        this.container = blockEntity.container();
         this.blockEntity = blockEntity;
-    }
-
-    @Override
-    public String[] getMethodNames() {
-        return new String[0];
-    }
-
-    @Override
-    public MethodResult callMethod(IComputerAccess iComputerAccess, ILuaContext iLuaContext, int i, IArguments iArguments) throws LuaException {
-        return null;
     }
 
     @Override
@@ -35,6 +35,6 @@ public class SwitchTrackRouterPeripheral implements IPeripheral, IDynamicPeriphe
 
     @Override
     public boolean equals(@Nullable IPeripheral iPeripheral) {
-        return false;
+        return hashCode() == iPeripheral.hashCode();
     }
 }
