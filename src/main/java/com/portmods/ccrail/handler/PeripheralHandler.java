@@ -3,6 +3,8 @@ package com.portmods.ccrail.handler;
 import com.portmods.ccrail.peripheral.RoutingDetectorPeripheral;
 import com.portmods.ccrail.peripheral.RoutingTrackPeripheral;
 import com.portmods.ccrail.peripheral.SwitchTrackRouterPeripheral;
+import com.portmods.ccrail.peripheral.TrainReaderPeripheral;
+import com.portmods.ccrail.world.entity.TrainReaderEntity;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import dan200.computercraft.api.peripheral.IPeripheralProvider;
 import mods.railcraft.world.level.block.entity.SwitchTrackRouterBlockEntity;
@@ -26,6 +28,8 @@ public class PeripheralHandler implements IPeripheralProvider {
             return LazyOptional.of(() -> new SwitchTrackRouterPeripheral((SwitchTrackRouterBlockEntity)blockEntity));
         }else if(blockEntity instanceof RoutingDetectorBlockEntity) {
             return LazyOptional.of(() -> new RoutingDetectorPeripheral((RoutingDetectorBlockEntity)blockEntity));
+        }else if(blockEntity instanceof TrainReaderEntity) {
+            return LazyOptional.of(() -> new TrainReaderPeripheral((TrainReaderEntity)blockEntity));
         }
 
         return LazyOptional.empty();

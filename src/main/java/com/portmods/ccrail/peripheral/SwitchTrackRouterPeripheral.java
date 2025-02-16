@@ -21,8 +21,6 @@ import java.util.*;
 
 public class SwitchTrackRouterPeripheral extends RoutingBookPeripheral {
 
-    private static final Logger LOGGER = LogUtils.getLogger();
-
     public SwitchTrackRouterPeripheral(SwitchTrackRouterBlockEntity blockEntity) {
         this.container = blockEntity.container();
         this.blockEntity = blockEntity;

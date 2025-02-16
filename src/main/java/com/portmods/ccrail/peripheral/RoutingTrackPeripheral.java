@@ -19,8 +19,6 @@ public class RoutingTrackPeripheral extends RoutingBookPeripheral {
 
     private final RoutingTrackBlockEntity blockEntity;
 
-    private static final Logger LOGGER = LogUtils.getLogger();
-
     private final String[] methods = new String[] {
             "getDestination",
             "setDestination",

@@ -1,7 +1,6 @@
 package com.portmods.ccrail.peripheral;
 
 import dan200.computercraft.api.peripheral.IPeripheral;
-import dan200.computercraft.api.peripheral.PeripheralType;
 import mods.railcraft.world.level.block.entity.detector.RoutingDetectorBlockEntity;
 import org.jetbrains.annotations.Nullable;
 

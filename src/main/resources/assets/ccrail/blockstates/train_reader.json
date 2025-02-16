@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ccrail:block/train_reader"
+    }
+  }
+}
